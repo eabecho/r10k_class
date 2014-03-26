@@ -28,3 +28,11 @@ account:
     password: '!'
     uid: 1002
     groups: wheel
+  charlie:
+    tag:
+      - base
+      - taos
+      - consultants
+    password: '!'
+    uid: 1003
+    groups: wheel
