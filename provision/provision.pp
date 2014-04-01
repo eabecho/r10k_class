@@ -40,7 +40,7 @@ ini_setting { 'puppet.conf/main/environment':
   value   => 'production'
 }
 
-ini_setting { 'puppet.conf/main/server':
+ini_setting { 'puppet.conf/agent/server':
   ensure  => 'present',
   path    => $puppet_conf,
   section => 'agent',
