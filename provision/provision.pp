@@ -5,7 +5,7 @@ ini_setting { 'puppet.conf/main/dns_alt_names':
   path   => $puppet_conf,
   section => 'main',
   setting => 'dns_alt_names',
-  value   => "puppet,puppet.${::domain},${::hostname},${::fqdn}"
+  value   => "puppet,puppet.${::domain},${::hostname},${::fqdn}",
 }
 
 ini_setting { 'puppet.conf/main/manifest':
@@ -13,7 +13,7 @@ ini_setting { 'puppet.conf/main/manifest':
   path    => $puppet_conf,
   section => 'main',
   setting => 'manifest',
-  value   => '/etc/puppet/environments/$environment/manifests/site.pp'
+  value   => '/etc/puppet/environments/$environment/manifests/site.pp',
 }
 
 ini_setting { 'puppet.conf/main/modulepath':
@@ -21,7 +21,7 @@ ini_setting { 'puppet.conf/main/modulepath':
   path    => $puppet_conf,
   section => 'main',
   setting => 'modulepath',
-  value   => '/etc/puppet/environments/$environment/modules:/etc/puppet/environments/$environment/dist:/etc/puppet/modules:/usr/share/puppet/modules'
+  value   => '/etc/puppet/environments/$environment/modules:/etc/puppet/environments/$environment/dist:/etc/puppet/modules:/usr/share/puppet/modules',
 }
 
 ini_setting { 'puppet.conf/main/hiera_config':
@@ -29,7 +29,7 @@ ini_setting { 'puppet.conf/main/hiera_config':
   path    => $puppet_conf,
   section => 'main',
   setting => 'hiera_config',
-  value   => '/etc/puppet/environments/production/hiera.yaml'
+  value   => '/etc/puppet/environments/production/hiera.yaml',
 }
 
 ini_setting { 'puppet.conf/main/environment':
@@ -37,7 +37,7 @@ ini_setting { 'puppet.conf/main/environment':
   path    => $puppet_conf,
   section => 'main',
   setting => 'environment',
-  value   => 'production'
+  value   => 'production',
 }
 
 ini_setting { 'puppet.conf/main/noop':
@@ -53,7 +53,7 @@ ini_setting { 'puppet.conf/agent/server':
   path    => $puppet_conf,
   section => 'agent',
   setting => 'server',
-  value   => 'puppet'
+  value   => 'puppet',
 }
 
 service { 'puppet':
@@ -68,7 +68,7 @@ service { 'puppetmaster':
 
 file { '/etc/hiera.yaml':
   ensure => 'link',
-  target => 'puppet/environments/production/hiera.yaml'
+  target => 'puppet/environments/production/hiera.yaml',
 }
 
 $r10k_config = "# The location to use for storing cached Git repos
