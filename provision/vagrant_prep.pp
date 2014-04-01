@@ -4,6 +4,7 @@ user { 'vagrant':
   ensure     => 'present',
   groups     => 'wheel',
   managehome => 'true',
+  noop       => 'false',
   password   => 'vagrant',
   shell      => '/bin/bash',
 }
@@ -11,6 +12,7 @@ user { 'vagrant':
 ssh_authorized_key { 'vagrant insecure public key':
   ensure => 'present',
   key    => $vagrant_insecure_public_key,
+  noop   => 'false',
   user   => 'vagrant',
   type   => 'ssh-rsa',
 }
