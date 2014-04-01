@@ -40,6 +40,14 @@ ini_setting { 'puppet.conf/main/environment':
   value   => 'production'
 }
 
+ini_setting { 'puppet.conf/main/noop':
+  ensure  => 'present',
+  path    => $puppet_conf,
+  section => 'main',
+  setting => 'noop',
+  value   => 'true',
+}
+
 ini_setting { 'puppet.conf/agent/server':
   ensure  => 'present',
   path    => $puppet_conf,
