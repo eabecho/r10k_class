@@ -16,3 +16,7 @@ mod 'concat',
 mod 'account',
   :git => 'git://github.com/torrancew/puppet-account',
   :ref => 'v0.0.5'
+
+mod 'ntp',
+  :git => 'https://github.com/puppetlabs/puppetlabs-ntp.git',
+  :ref => '3.0.3'
